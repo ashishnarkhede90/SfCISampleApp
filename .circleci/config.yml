@@ -9,7 +9,11 @@ jobs:
       - run:
           name: Install dependencies
           command: . build/install.sh
-
+      
+      -run:
+          name: Authorize Sf org
+          command: . build/authorize-org.sh
+          
       - run:
           name: Greeting
           command: echo Hello, world.
