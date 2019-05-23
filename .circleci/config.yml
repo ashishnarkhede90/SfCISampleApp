@@ -6,7 +6,10 @@ jobs:
 
     steps:
       - checkout
-
+      - run:
+          name: Install dependencies
+          command: . build/install.sh
+          
       - run:
           name: Greeting
           command: echo Hello, world.
