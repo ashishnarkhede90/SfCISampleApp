@@ -13,11 +13,21 @@ jobs:
       - run:
           name: Authorize Sf org
           command: . build/authorize-org.sh
+      
+  workflows:
+    version: 2
+    validate:
+      jobs:
+        - build:
+            filters:
+              branches:
+                ignore:
+                  - master
 
-      - run:
-          name: Greeting
-          command: echo Hello, world.
+      # - run:
+      #     name: Greeting
+      #     command: echo Hello, world.
 
-      - run:
-          name: Print the Current Time
-          command: date
+      # - run:
+      #     name: Print the Current Time
+      #     command: date
