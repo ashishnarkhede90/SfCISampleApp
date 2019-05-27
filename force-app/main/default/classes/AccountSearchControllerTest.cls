@@ -11,6 +11,10 @@ public class AccountSearchControllerTest {
         }
         insert testAccounts;
 
+        Id [] fixedSearchResults= new Id[1];
+		fixedSearchResults[0] = testAccounts[0].Id;
+		Test.setFixedSearchResults(fixedSearchResults);
+        
         Test.startTest();
             List<Account> accts = AccountSearchController.searchAccounts('Test');
             System.assertNotEquals(null, accts, 'Accounts should be present');
