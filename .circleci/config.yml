@@ -13,6 +13,14 @@ jobs:
       - run:
           name: Authorize Sf org
           command: . build/authorize-org.sh
+
+      - run:
+          name: Create a scratch org
+          command: . /build/create-scratch-org.sh
+
+      - run:
+          name: Run tests
+          command: . /build/test.sh
       
 workflows:
   version: 2
