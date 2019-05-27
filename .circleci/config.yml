@@ -14,15 +14,15 @@ jobs:
           name: Authorize Sf org
           command: . build/authorize-org.sh
       
-  workflows:
-    version: 2
-    validate:
-      jobs:
-        - build:
-            filters:
-              branches:
-                ignore:
-                  - master
+workflows:
+  version: 2
+  validate:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - master
 
       # - run:
       #     name: Greeting
